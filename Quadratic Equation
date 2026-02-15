@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int result;
+    result=2+10/8*3;
+    printf("result= %d\n", result);
+    double result_2=2+10/8.0*3;
+    printf("result_2= %lf\n", result_2);
+    int a;
+    int b;
+    int c;
+    printf("輸入a\n");
+    scanf("%d", &a);
+    printf("輸入b\n");
+    scanf("%d", &b);
+    printf("輸入c\n");
+    scanf("%d", &c);
+    double x= (-b+sqrt(b*b-4*a*c))/(2*a);
+    double x2=(-b-sqrt(b*b-4*a*c))/(2*a);
+    printf("解1=%lf\n", x);
+    printf("解2=%lf", x2);
+
+    return 0;
+}
