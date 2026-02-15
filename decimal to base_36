@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+void to36(int n, char *out) {
+    const char charset[]="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char buffer[65];
+    int i=0;
+
+    if(n == 0) {strcpy(out, "0"); return;}
+
+    while(n>0) {
+        buffer[i++]=charset[n%36];
+        n /=36;
+    }
+    buffer[i]='\0';
+    int len = strlen(buffer);
+    for(int j=0; j<len; j++) {
+        out[j]=buffer[len-1-j];
+    }
+    out[len]='\0';
+}
+
+int main() {
+    int a;
+    char result[250];
+    printf("輸入數字\n");
+    scanf("%d", &a);
+    to36(a, result);
+    printf("36進位結果為%s\n", result);
+    return 0;
+}
