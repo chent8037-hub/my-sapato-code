@@ -1,0 +1,78 @@
+#include <stdio.h>
+
+int main() {
+    char op;
+    double a, b;
+    char choice = 'y';
+    int n;
+    
+    do {
+        printf("這是二進位計算機\n");
+        printf("+-*/選擇一個運算符號: ");
+        scanf(" %c", &op);
+        printf("first num: ");
+        scanf("%lf", &a);
+        printf("second num: ");
+        scanf("%lf", &b);
+
+        switch (op) {
+            case '+': {
+                double bsum=a+b;
+                int sum = (int)(a + b);
+                for(int i = 31; i >= 0; i--) {
+                    int bit = (sum >> i) & 1;
+                    printf("%g\n", bsum);
+                    printf("%d", bit);
+                }
+                printf("\n");
+                break;
+            }
+            case '-': {
+                double bm=a-b;
+                int m = (int)(a - b);
+                for(int i = 31; i >= 0; i--) {
+                    int so = (m >> i) & 1;
+                    printf("%g\n", bm);
+                    printf("%d", so);
+                }
+                printf("\n");
+                break;
+            }
+            case '*': {
+                double bmul=a*b;
+                int mul = (int)(a * b);
+                for(int i = 31; i >= 0; i--) {
+                    int z = (mul >> i) & 1;
+                    printf("%g", bmul);
+                    printf("%d", z);
+                }
+                printf("\n");
+                break;
+            }
+            case '/': {
+                printf("%g\n", a/b);
+                if (b != 0) {
+                    n = (int)(a / b);
+                    for(int i = 31; i >= 0; i--) {
+                        int t = (n >> i) & 1;
+     
+                        printf("%d", t);
+                    }
+                    printf("\n");
+                } else {
+                    printf("error: 不能除以零\n");
+                }
+                break;
+            }
+            default: {
+                printf("錯誤的運算符\n");
+            }
+        }
+        
+        printf("是否繼續? (y/n): ");
+        scanf(" %c", &choice);
+        
+    } while (choice == 'y');
+    
+    return 0;
+}
