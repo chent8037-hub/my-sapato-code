@@ -1,0 +1,26 @@
+#include <stdio.h>
+//ax+fy=c nx+gy=z
+int main() {
+    double a, f, c, n, g, z;
+    printf("這是二元一次方程式計算機,格式為?x+?y=?,若要減法,請用負數\n");
+    printf("請輸入第一式x的係數\n");
+    scanf("%lf", &a);
+    printf("請輸入第一式y的係數\n");
+    scanf("%lf", &f);
+    printf("請輸入一式的值\n");
+    scanf("%lf", &c);
+    printf("請輸入第二式x的係數\n");
+    scanf("%lf", &n);
+    printf("請輸入二式y的係數\n");
+    scanf("%lf", &g);
+    printf("請輸入二式的值\n");
+    scanf("%lf", &z);
+    double muly=f*n-g*a;
+    double yan=n*c-a*z;
+    double y=yan/muly;
+    double mulx=a*g-n*f;
+    double xan=g*c-f*z;
+    double x=xan/mulx;
+    printf("x=%g, y=%g", x, y);
+    return 0;
+}
