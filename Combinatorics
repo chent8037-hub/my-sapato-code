@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+    long long factorial(int n) {
+        long long fact=1;
+        for (int i=1; i<=n; i++) {
+            fact *=i;
+        }
+        return fact;
+    }
+
+int main() {
+    int a;
+    int b;
+    int all;
+    printf("輸入總位置數: ");
+    scanf("%d", &all);
+    printf("輸入其中一個東西的個數: ");
+    scanf("%d", &a);
+    b=all-a;
+
+    long long result=factorial(all)/(factorial(a)*factorial(b));
+    printf("不同的排列組合共有%lld種\n", result);
+    return 0;
+}
