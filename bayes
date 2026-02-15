@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a;
+    double c;
+    double d;
+    double odds;
+    printf("輸入先驗概率的目標");
+    scanf(" %lf", &a);
+   double b=1-a;
+    printf("輸入證據裡的準確率");
+    scanf(" %lf", &c);
+    printf("輸入證據裡的不準確率");
+    scanf(" %lf", &d);
+    double ok=log(a)+log(c);
+    double cd=log(b)+log(d);
+    double oo=(ok > cd) ? ok : cd;
+    double answer=exp(ok - oo) / (exp(ok - oo) + exp(cd - oo));
+    printf("%lf\n", answer);
+    printf("淨虧盈比");
+    scanf("%lf", &odds);
+    double f=answer-((1-answer)/odds);
+    printf("%lf", f);
+    return 0;
+}
