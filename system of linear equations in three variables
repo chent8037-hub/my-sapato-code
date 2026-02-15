@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    double x1, y1, z1, d1;
+    double x2, y2, z2, d2;
+    double x3, y3, z3, d3;
+    printf("這是3元一次計算機,請輸入第一式每一項的係數(x1+y1+z1=d1)\n");
+    scanf("%lf %lf %lf %lf", &x1, &y1, &z1, &d1);
+    printf("請輸入第二式每一項的係數(x2+y2+z2=d2)\n");
+    scanf("%lf %lf %lf %lf", &x2, &y2, &z2, &d2);
+    printf("請輸入第三式每一項的係數(x3+y3+z3=d3)\n");
+    scanf("%lf %lf %lf %lf", &x3, &y3, &z3, &d3);
+    double y4=x2*y1-x1*y2;
+    double z4=x2*z1-x1*z2;
+    double d4=x2*d1-x1*d2;
+    double y5=x3*y1-x1*y3;
+    double z5=x3*z1-x1*z3;
+    double d5=x3*d1-x1*d3;
+    double z6=y5*z4-y4*z5;
+    double d6=y5*d4-y4*d5;
+    double z=d6/z6;
+    double y=(d4-z4*z)/y4;
+    double x=(d1-y1*y-z1*z)/x1;
+    printf("x=%lf\ny=%lf\nz=%lf\n", x, y, z);
+    return 0;
+}
