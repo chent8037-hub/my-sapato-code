@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, n;
+    printf("輸入x的次方");
+    scanf("%lf", &a);
+    printf("輸入x的係數");
+    scanf("%lf", &n);
+    b=a-1;
+    double y=a*n;
+    printf("微分後為%gx^%g\n", y, b);
+    b=a+1;
+    if (a==-1) {
+        printf("積分為ln|x|+c");
+    }
+    else {
+    double z=n/(b);
+    printf("積分後為%gx^%g+c\n", z, b);
+    }
+    return 0;
+}
