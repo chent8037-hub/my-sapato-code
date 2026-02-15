@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int N, K; //答對題數與全題目數
+    double n, s=0.90, p=0.25; //掌握度和實力者會對的機率和猜對的機率
+    printf("輸入掌握度\n");
+    scanf("%lf", &n);
+
+    printf("輸入答對題數\n");
+    scanf("%d", &N);
+    printf("輸入總題數\n");
+    scanf("%d", &K);
+    double master=n*pow(s,N)*pow(1-s,K-N); //*實力者的掌握度在 答對率90%答對N的機率在有錯誤率裡的機率
+    double nonmaster=(1-n)*pow(p,N)*pow(1-p,K-N);
+    double result=master/(nonmaster+master);
+    printf("在%d題中對%d題為實力的機率為%.20f", K, N, result);
+    
+    return 0;
+}
